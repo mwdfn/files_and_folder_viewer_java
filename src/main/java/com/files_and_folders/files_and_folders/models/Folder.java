@@ -20,13 +20,13 @@ public class Folder {
     @OneToMany(mappedBy = "folder")
     private List<File> files;
     @ManyToOne
-    @JoinColumn(name = "person")
+    @JoinColumn(name = "person_id")
     @JsonIgnoreProperties({"folders"})
-    private Person person;
+    private Person persons;
 
-    public Folder(String title, Person person) {
+    public Folder(String title, Person persons) {
         this.title = title;
-        this.person = person;
+        this.persons = persons;
         this.files = new ArrayList<>();
     }
 
@@ -59,10 +59,10 @@ public class Folder {
     }
 
     public Person getPerson() {
-        return person;
+        return persons;
     }
 
-    public void setPerson(Person person) {
-        this.person = person;
+    public void setPerson(Person persons) {
+        this.persons = persons;
     }
 }
