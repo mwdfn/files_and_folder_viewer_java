@@ -16,7 +16,7 @@ public class File {
     private String name;
     @Column(name="extension")
     private String extension;
-    @Column
+    @Column(name="size")
     private int size;
     @ManyToOne
     @JoinColumn(name = "folder_id")
