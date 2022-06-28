@@ -17,7 +17,7 @@ public class Folder {
     private String title;
 
     @JsonIgnoreProperties({"folder"})
-    @OneToMany(mappedBy = "folder")
+    @OneToMany(mappedBy = "folder", fetch = FetchType.LAZY)
     private List<File> files;
     @ManyToOne
     @JoinColumn(name = "person_id")
